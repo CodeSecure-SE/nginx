@@ -260,6 +260,9 @@ main(int argc, char *const *argv)
         return 1;
     }
 
+    init_cycle = 0;
+    
+
     if (ngx_process_options(&init_cycle) != NGX_OK) {
         return 1;
     }
