@@ -62,7 +62,7 @@ int f()
 
       case 5:        /* trying to free an address on the stack */
         p = &buf[0];
-        free(p);
+        //free(p); -Werror=free-nonheap-object catches this
         break;
 
       case 6:        /* aliasing is taken into account
