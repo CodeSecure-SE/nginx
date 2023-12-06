@@ -65,13 +65,7 @@ jobs:
         with:
           sarif_file: warnings.sarif
           category: "CodeSecure CodeSonar"     
-      - name: Upload SARIF results to branch
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: warnings.sarif
-          category: "CodeSecure CodeSonar Branch"     
-          ref: ${{ github.ref_name }}
-          sha: ${{ github.sha }}
+
   
         
             
