@@ -71,6 +71,7 @@ jobs:
           sarif_file: warnings.sarif
           category: "CodeSecure CodeSonar"     
           ref: ${{ github.ref_name }}
+          sha: ${{ github.sha }}
   
         
             
