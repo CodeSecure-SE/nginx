@@ -32,6 +32,29 @@ static void ngx_unload_module(void *data);
 #endif
 
 
+// The following is copied from GNU Chess 5.0.8
+char *return_append_str(char *dest, const char *s) {
+/* Append text s to dest, and return new result. */
+        char *new_loc;
+        size_t new_len;
+        /* This doesn't have buffer overflow vulnerabilities, because
+           we always allocate for enough space before appending. */
+        if (!dest) {
+                new_loc = (char *) malloc(strlen(s)+1);
+                if (!new_loc) return dest;
+                strcpy(new_loc, s);
+                return new_loc;
+        }
+        new_len = strlen(dest) + strlen(s) + 1;
+        new_loc = (char *) malloc(new_len);
+        
+        if (!new_loc) return dest; /* Can't do it, throw away the data */
+        strcpy(new_loc, dest);
+        strcat(new_loc, s);
+        return new_loc;
+}
+
+
 static ngx_conf_enum_t  ngx_debug_points[] = {
     { ngx_string("stop"), NGX_DEBUG_POINTS_STOP },
     { ngx_string("abort"), NGX_DEBUG_POINTS_ABORT },
