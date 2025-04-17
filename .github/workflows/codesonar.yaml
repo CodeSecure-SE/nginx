@@ -26,7 +26,7 @@ jobs:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
       CSONAR_HUB_URL: "https://partnerdemo.codesonar.com" 
       CSONAR_HUB_USER: "${{ secrets.CSONAR_HUB_USER }}"
-      CSONAR_HUB_PASSWORD: "${{ secrets.CSONAR_HUB_PASS }}"
+      CSONAR_HUB_PASSWORD: "${{ secrets.CSONAR_HUB_PASSWORD }}"
       CSONAR_CSHOME: /opt/codesonar
       CS_USER_HOME: /__w/nginx/nginx
       COMMIT_HASH: ${{ github.sha }}
