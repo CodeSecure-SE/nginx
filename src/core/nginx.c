@@ -38,6 +38,7 @@ static ngx_conf_enum_t  ngx_debug_points[] = {
     { ngx_null_string, 0 }
 };
 
+// insert bad code here
 
 
 static ngx_command_t  ngx_core_commands[] = {
